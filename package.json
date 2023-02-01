@@ -1,0 +1,15 @@
+{
+  "_name": "test",
+  "name": "@thingmate/wot-scripting-api",
+  "version": "1.0.0",
+  "description": "Description",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thingmate/wot-scripting-api"
+  },
+  "keywords": [],
+  "author": "Valentin Richard",
+  "license": "MIT",
+  "access": "public",
+  "dependencies": {}
+}
