@@ -1,4 +1,3 @@
-
 import { IExposedThingExposeTrait } from './traits/expose/exposed-thing-expose.trait';
 import { IExposedThingGetActionTrait } from './traits/get-action/exposed-thing-get-action.trait';
 import { IExposedThingGetEventTrait } from './traits/get-event/exposed-thing-get-event.trait';

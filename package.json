@@ -1,8 +1,7 @@
 {
-  "_name": "test",
   "name": "@thingmate/wot-scripting-api",
   "version": "1.0.0",
-  "description": "Description",
+  "description": "Custom WoT scripting API",
   "repository": {
     "type": "git",
     "url": "https://github.com/thingmate/wot-scripting-api"
@@ -11,5 +10,10 @@
   "author": "Valentin Richard",
   "license": "MIT",
   "access": "public",
-  "dependencies": {}
+  "dependencies": {
+    "@lirx/core": "^1.2.0",
+    "@lirx/promise": "^1.1.0",
+    "wot-thing-description-types": "^1.1.0-13-October-2022",
+    "wot-typescript-definitions": "^0.8.0-SNAPSHOT.23"
+  }
 }

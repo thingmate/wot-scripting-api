@@ -1,6 +1,6 @@
 import { IPromise } from '@lirx/promise';
 import { ThingDescription } from 'wot-typescript-definitions';
-import { IWoT } from '../../../wot.type';
+import { IWoT } from '../../types/wot.type';
 import { IConsumedThing } from '../comsumed-thing.trait-collection';
 import { createConsumedThingFromNativeConsumedThing } from './create-consumed-thing-from-native-consumed-thing';
 

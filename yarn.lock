@@ -2,6 +2,31 @@
 # yarn lockfile v1
 
 
+"@lirx/core@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@lirx/core/-/core-1.2.0.tgz#0b7d298176e453096626a4d65efe01eb11e5fde5"
+  integrity sha512-0t3I+aeuuW3VL23gCxOoER9xdNGP2o0hQzbUb/apERXFvRTUOeANDMKCPIDcNPa/c3/9KuB4pIr1JVY6Z6QjLw==
+  dependencies:
+    "@lirx/promise" "^1.0.0"
+    "@lirx/utils" "^1.0.0"
+
+"@lirx/promise@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lirx/promise/-/promise-1.0.0.tgz#702195456c252e167a57f1babbfef5d8841ffd48"
+  integrity sha512-ULpGu8vcJr7F6JWT5yGPd1bFM07gUI7DBtlRARE8BVAUqGoY01AavZqZU4Kk4xeX7RKXwbRJ5PFzEnf9p508SQ==
+  dependencies:
+    "@lirx/utils" "^1.0.0"
+
+"@lirx/utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lirx/utils/-/utils-1.0.0.tgz#a0568b0f8976e3d883d97172424323635498f53f"
+  integrity sha512-9e7KHptwqOEVHVi545fSGluL3t3hNdazfZ7sKTg3EHU+2jPJGrVd8+I0vBHkoA/BCi2OO2bq9NLotPK/NlqT3Q==
+
+wot-thing-description-types@^1.1.0-13-October-2022:
+  version "1.1.0-13-October-2022"
+  resolved "https://registry.yarnpkg.com/wot-thing-description-types/-/wot-thing-description-types-1.1.0-13-October-2022.tgz#172717f28f58d4ad2e19fc1b87ef30dd2268d0e7"
+  integrity sha512-16LVRNat1cSTiGHZBGKomIwISboAtS3LoZPtYF14uOTvW8wBu/QtJYcZi6MPEXCut7/WNw68EmtYMLfhU5UQbA==
+
 wot-typescript-definitions@^0.8.0-SNAPSHOT.23:
   version "0.8.0-SNAPSHOT.23"
   resolved "https://registry.yarnpkg.com/wot-typescript-definitions/-/wot-typescript-definitions-0.8.0-SNAPSHOT.23.tgz#ab5afcbd464557c81b6c43d3792b3cad2afab69c"

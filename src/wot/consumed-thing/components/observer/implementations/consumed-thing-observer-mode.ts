@@ -1,4 +1,3 @@
-import { IConsumedThingObservableMode } from '../../../helpers/create-consumed-thing-observable';
 
 export type IConsumedThingObserverMode =
   | 'property'
@@ -6,7 +5,7 @@ export type IConsumedThingObserverMode =
   ;
 
 export function consumedThingObserverModeToMethodeName(
-  mode: IConsumedThingObservableMode,
+  mode: IConsumedThingObserverMode,
 ): string {
   switch (mode) {
     case 'property':
