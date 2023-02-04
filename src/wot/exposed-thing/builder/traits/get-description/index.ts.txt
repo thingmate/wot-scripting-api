@@ -1,0 +1,2 @@
+export * from './exposed-thing-builder-get-description.function-definition';
+export * from './exposed-thing-builder-get-description.trait';
