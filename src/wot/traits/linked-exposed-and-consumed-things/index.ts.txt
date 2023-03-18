@@ -1,0 +1,1 @@
+export * from './linked-exposed-and-consumed-things.type';

@@ -1,0 +1,2 @@
+export * from './from-native-exposed-thing/index';
+export * from './from-wot/index';

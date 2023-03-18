@@ -1,0 +1,4 @@
+export * from './thing-actions-config.type';
+export * from './thing-config.type';
+export * from './thing-events-config.type';
+export * from './thing-properties-config.type';

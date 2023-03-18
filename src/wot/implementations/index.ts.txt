@@ -1,0 +1,3 @@
+export * from './linked-exposed-and-consumed-things/index';
+export * from './shared/index';
+export * from './wot/index';
