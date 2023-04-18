@@ -1,5 +1,0 @@
-export * from './components/index';
-export * from './consumed-thing.trait-collection';
-export * from './functions/index';
-export * from './traits/index';
-export * from './types/index';

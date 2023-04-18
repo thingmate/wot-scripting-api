@@ -1,2 +1,0 @@
-export * from './consumed-thing-observer.trait-collection';
-export * from './traits/index';

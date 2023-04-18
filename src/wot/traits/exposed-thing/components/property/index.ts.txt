@@ -1,2 +1,0 @@
-export * from './esposed-thing-property.trait-collection';
-export * from './traits/index';

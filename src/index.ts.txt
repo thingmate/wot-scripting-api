@@ -1,3 +1,2 @@
 export * from './devices/index';
-export * from './misc/index';
-export * from './wot/index';
+export * from './thing/index';

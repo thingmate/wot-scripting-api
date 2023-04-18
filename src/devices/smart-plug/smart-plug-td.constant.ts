@@ -1,5 +1,3 @@
-import { ExposedThingInit } from 'wot-typescript-definitions';
-
 const START_PLUG_STATE_ENUM = ['on', 'off'];
 
 export const SMART_PLUG_TD = {
@@ -59,5 +57,5 @@ export const SMART_PLUG_TD = {
       },
     },
   },
-} satisfies ExposedThingInit;
+};
 

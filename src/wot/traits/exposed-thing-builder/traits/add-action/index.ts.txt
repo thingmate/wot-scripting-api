@@ -1,2 +1,0 @@
-export * from './exposed-thing-builder-add-action.function-definition';
-export * from './exposed-thing-builder-add-action.trait';

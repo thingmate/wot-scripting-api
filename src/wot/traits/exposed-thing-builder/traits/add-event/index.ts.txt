@@ -1,2 +1,0 @@
-export * from './exposed-thing-builder-add-event.function-definition';
-export * from './exposed-thing-builder-add-event.trait';

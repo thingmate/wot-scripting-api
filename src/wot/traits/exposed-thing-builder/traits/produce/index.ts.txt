@@ -1,2 +1,0 @@
-export * from './exposed-thing-builder-produce.function-definition';
-export * from './exposed-thing-builder-produce.trait';

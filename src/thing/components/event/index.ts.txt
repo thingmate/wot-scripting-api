@@ -1,0 +1,2 @@
+export * from './thing-event.trait-collection';
+export * from './traits/index';

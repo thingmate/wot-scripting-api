@@ -1,2 +1,0 @@
-export * from './exposed-thing-action.trait-collection';
-export * from './traits/index';

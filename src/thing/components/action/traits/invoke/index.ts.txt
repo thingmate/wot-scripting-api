@@ -1,0 +1,2 @@
+export * from './thing-action-invoke.function-definition';
+export * from './thing-action-invoke.trait';

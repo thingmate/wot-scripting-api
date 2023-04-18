@@ -1,0 +1,2 @@
+export * from './thing-config.type';
+export * from './thing-value.type';

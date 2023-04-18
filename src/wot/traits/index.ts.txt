@@ -1,5 +1,0 @@
-export * from './consumed-thing/index';
-export * from './exposed-thing/index';
-export * from './exposed-thing-builder/index';
-export * from './linked-exposed-and-consumed-things/index';
-export * from './thing/index';

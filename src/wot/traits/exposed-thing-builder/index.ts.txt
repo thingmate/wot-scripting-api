@@ -1,2 +1,0 @@
-export * from './exposed-thing-builder.trait-collection';
-export * from './traits/index';

@@ -1,3 +1,0 @@
-export * from './infer-exposed-thing-action-from-name.type';
-export * from './infer-exposed-thing-event-from-name.type';
-export * from './infer-exposed-thing-property-from-name.type';

@@ -1,2 +1,0 @@
-export * from './components/index';
-export * from './create-consumed-thing-from-native-consumed-thing';

@@ -1,2 +1,0 @@
-export * from './consumed-thing-event.trait-collection';
-export * from './traits/index';
