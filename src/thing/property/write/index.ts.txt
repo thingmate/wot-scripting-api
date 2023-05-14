@@ -1,1 +1,1 @@
-export * from './create-readonly-thing-property-write-function';
+export * from './thing-property-write-function.type';
