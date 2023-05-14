@@ -1,0 +1,1 @@
+export * from './thing-property-read-function.type';
