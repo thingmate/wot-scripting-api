@@ -1,3 +1,0 @@
-export * from './thing-get-property.function-definition';
-export * from './thing-get-property.trait';
-export * from './thing-properties-config.type';

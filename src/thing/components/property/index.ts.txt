@@ -1,3 +1,0 @@
-export * from './implementations/index';
-export * from './traits/index';
-export * from './thing-property.trait-collection';

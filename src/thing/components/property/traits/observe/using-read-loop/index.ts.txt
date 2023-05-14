@@ -1,2 +1,0 @@
-export * from './thing-property-observe.using-read-loop.function-definition';
-export * from './thing-property-observe.using-read-loop.trait';

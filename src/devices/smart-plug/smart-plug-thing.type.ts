@@ -1,5 +1,5 @@
-import { IThing } from '../../thing/thing.trait-collection';
+import { Thing } from '../../thing/thing.class';
 import { ISmartPlugConfig } from './smart-plug-config.type';
 
-export type ISmartPlugThing = IThing<ISmartPlugConfig>;
+export type ISmartPlugThing = Thing<ISmartPlugConfig>;
 

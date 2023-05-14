@@ -1,5 +1,0 @@
-export * from './components/index';
-export * from './implementations/index';
-export * from './thing.trait-collection';
-export * from './traits/index';
-export * from './types/index';

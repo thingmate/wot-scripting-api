@@ -1,17 +1,27 @@
-import { IThingAction } from '../../thing/components/action/thing-action.trait-collection';
-import { IThingProperty } from '../../thing/components/property/thing-property.trait-collection';
-import { ISmartPlugConsumptionHistory } from './smart-plug-consumption-history.type';
-import { ISmartPlugConsumption } from './smart-plug-consumption.type';
-import { ISmartPlugState } from './smart-plug-state/smart-plug-state.type';
+import { IHavingOnOffStateThingProperty } from '../shared/on-off-state/thing-config/on-off-state-thing-property.type';
+import { IHavingToggleOnOffStateThingAction } from '../shared/on-off-state/thing-config/toggle-on-off-state-thing-action.type';
+import {
+  IHavingPowerConsumptionHistoryThingProperty,
+} from '../shared/power-consumption-history/thing-config/power-consumption-history-thing-property.type';
+import { IHavingPowerConsumptionThingProperty } from '../shared/power-consumption/thing-config/power-consumption-thing-property.type';
+
+export interface ISmartPlugConfigProperties extends //
+  IHavingOnOffStateThingProperty,
+  IHavingPowerConsumptionThingProperty,
+  IHavingPowerConsumptionHistoryThingProperty
+//
+{
+}
+
+export interface ISmartPlugConfigActions extends //
+  IHavingToggleOnOffStateThingAction
+//
+{
+
+}
 
 export interface ISmartPlugConfig {
-  properties: {
-    state: IThingProperty<ISmartPlugState>;
-    consumption: IThingProperty<ISmartPlugConsumption>;
-    consumptionHistory: IThingProperty<ISmartPlugConsumptionHistory[]>;
-  };
-  actions: {
-    toggle: IThingAction<ISmartPlugState | null, ISmartPlugState>,
-  };
+  properties: ISmartPlugConfigProperties;
+  actions: ISmartPlugConfigActions;
 }
 

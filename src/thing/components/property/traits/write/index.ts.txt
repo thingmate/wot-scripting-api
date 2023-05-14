@@ -1,2 +1,0 @@
-export * from './thing-property-write.function-definition';
-export * from './thing-property-write.trait';

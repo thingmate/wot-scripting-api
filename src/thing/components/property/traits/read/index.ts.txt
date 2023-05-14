@@ -1,2 +1,0 @@
-export * from './thing-property-read.function-definition';
-export * from './thing-property-read.trait';

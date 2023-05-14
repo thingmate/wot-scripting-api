@@ -1,3 +1,0 @@
-export * from './thing-events-config.type';
-export * from './thing-get-event.function-definition';
-export * from './thing-get-event.trait';

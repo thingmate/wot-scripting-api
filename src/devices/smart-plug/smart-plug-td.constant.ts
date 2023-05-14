@@ -1,61 +1,18 @@
-const START_PLUG_STATE_ENUM = ['on', 'off'];
+import { ON_OFF_STATE_THING_PROPERTY_TD } from '../shared/on-off-state/thing-config/on-off-state-thing-property.type';
+import { TOGGLE_ON_OFF_STATE_THING_ACTION_TD } from '../shared/on-off-state/thing-config/toggle-on-off-state-thing-action.type';
+import {
+  POWER_CONSUMPTION_HISTORY_THING_PROPERTY_TD,
+} from '../shared/power-consumption-history/thing-config/power-consumption-history-thing-property.type';
+import { POWER_CONSUMPTION_THING_PROPERTY_TD } from '../shared/power-consumption/thing-config/power-consumption-thing-property.type';
 
 export const SMART_PLUG_TD = {
   properties: {
-    state: {
-      enum: START_PLUG_STATE_ENUM,
-    },
-    consumption: {
-      type: 'object',
-      properties: {
-        current: {
-          type: 'number',
-          unit: 'A',
-        },
-        voltage: {
-          type: 'number',
-          unit: 'V',
-        },
-        power: {
-          type: 'number',
-          unit: 'W',
-        },
-      },
-      readOnly: true,
-    },
-    consumptionHistory: {
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          power: {
-            type: 'number',
-            unit: 'W',
-          },
-          start: {
-            title: 'start date as timestamp in ms',
-            type: 'number',
-            unit: 'ms',
-          },
-          end: {
-            title: 'end date as timestamp in ms',
-            type: 'number',
-            unit: 'ms',
-          },
-        },
-      },
-      readOnly: true,
-    },
+    ...ON_OFF_STATE_THING_PROPERTY_TD,
+    ...POWER_CONSUMPTION_THING_PROPERTY_TD,
+    ...POWER_CONSUMPTION_HISTORY_THING_PROPERTY_TD,
   },
   actions: {
-    toggle: {
-      input: {
-        enum: START_PLUG_STATE_ENUM,
-      },
-      output: {
-        enum: START_PLUG_STATE_ENUM,
-      },
-    },
+    ...TOGGLE_ON_OFF_STATE_THING_ACTION_TD,
   },
 };
 
