@@ -6,7 +6,6 @@ export interface ICreateReadonlyThingPropertyWriteFunctionOptions {
   name?: string;
 }
 
-
 export function createReadonlyThingPropertyWriteFunction<GValue extends IThingValue>(
   {
     name,
@@ -19,3 +18,4 @@ export function createReadonlyThingPropertyWriteFunction<GValue extends IThingVa
     return AsyncTask.error(new Error(`The property${name ? ` '${name}'` : ''} is readonly.`), abortable);
   };
 }
+

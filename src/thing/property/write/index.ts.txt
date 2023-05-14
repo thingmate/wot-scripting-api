@@ -1,3 +1,1 @@
 export * from './create-readonly-thing-property-write-function';
-export * from './readonly-thing-property-write-function.constant';
-export * from './thing-property-write-function.type';

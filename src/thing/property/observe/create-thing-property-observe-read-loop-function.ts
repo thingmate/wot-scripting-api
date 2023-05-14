@@ -5,7 +5,6 @@ import { IThingValue } from '../../types/thing-value.type';
 import { IThingPropertyReadFunction } from '../read/thing-property-read-function.type';
 import { IThingPropertyObserveFunction, IThingPropertyObserveFunctionOptions } from './thing-property-observe-function.type';
 
-
 export interface ICreateThingPropertyObserveUsingReadLoopFunctionOptions<GValue extends IAsyncTaskConstraint<GValue, IThingValue>> {
   read: IThingPropertyReadFunction<GValue>;
   defaultRefreshTime: number;
