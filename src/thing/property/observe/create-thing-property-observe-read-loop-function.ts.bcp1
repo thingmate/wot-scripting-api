@@ -55,3 +55,40 @@ export function createThingPropertyObserveUsingReadLoopFunction<GValue extends I
     };
   };
 }
+
+export function observeThingPropertyUsingReadLoop<GValue extends IAsyncTaskConstraint<GValue, IThingValue>>(
+
+): IPushSourceWithBackPressure<GValue> {
+  return (
+    sink: IPushSinkWithBackPressure<GValue>,
+    abortable: Abortable,
+  ): AsyncTask<void> => {
+    const loop = (
+      abortable: Abortable,
+    ): AsyncTask<void> => {
+      const start: number = Date.now();
+      return AsyncTask.fromFactory(read, abortable)
+        .successful((
+          value: GValue,
+          abortable: Abortable,
+        ): AsyncTask<void> => {
+          return sink(value, abortable);
+        })
+        .successful((
+          _,
+          abortable: Abortable,
+        ): AsyncTask<void> => {
+          const _refreshTime: number = Math.max(0, refreshTime - Date.now() + start);
+          return asyncTimeout(_refreshTime, abortable);
+        })
+        .successful((
+          _,
+          abortable: Abortable,
+        ): AsyncTask<void> => {
+          return loop(abortable);
+        });
+    };
+
+    return loop(abortable);
+  };
+}

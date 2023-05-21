@@ -1,5 +1,7 @@
 import { IHavingOnOffStateThingProperty } from '../shared/on-off-state/thing-config/on-off-state-thing-property.type';
-import { IHavingToggleOnOffStateThingAction } from '../shared/on-off-state/thing-config/toggle-on-off-state-thing-action.type';
+import {
+  IHavingToggleOnOffStateThingAction
+} from '../shared/on-off-state/thing-config/toggle-on-off-state-thing-action/having-toggle-on-off-state-thing-action.type';
 import {
   IHavingPowerConsumptionHistoryThingProperty,
 } from '../shared/power-consumption-history/thing-config/power-consumption-history-thing-property.type';

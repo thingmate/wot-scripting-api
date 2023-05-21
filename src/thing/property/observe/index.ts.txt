@@ -1,2 +1,2 @@
-export * from './create-thing-property-observe-read-loop-function';
+export * from './observe-thing-property-using-read-loop';
 export * from './thing-property-observe-function.type';

@@ -2,15 +2,20 @@
 # yarn lockfile v1
 
 
+"@lifaon/color@latest":
+  version "1.0.0-dev.1684328292238"
+  resolved "http://localhost:4873/@lifaon/color/-/color-1.0.0-dev.1684328292238.tgz#b9ceeb8ad887f2b0c273329180ef3249ae2bc0a8"
+  integrity sha512-lbiNl1ndGlVD5Ftc0omoAyKCjZgKYdUEmmABIMMHZzoCdmPt6v0QbtVDu7NdI3xdXxD9Bx7AzzNTX9BG7FB7UA==
+
 "@lirx/async-task@latest":
   version "1.2.0"
   resolved "http://localhost:4873/@lirx/async-task/-/async-task-1.2.0.tgz#3358038f78d63f3eecad0f10e4c6e019dab710b8"
   integrity sha512-OTT0FYeYrRPmmOe/sgTt6nTOiL+r3Hq6Fbqnkh4L8ca7rGr1HAD5xZZ/7ym7lhIfnMSRyZbuXRatPqM2qMZurA==
 
 "@lirx/stream@latest":
-  version "0.8.0-dev.1684078265639"
-  resolved "http://localhost:4873/@lirx/stream/-/stream-0.8.0-dev.1684078265639.tgz#29b26c15355cbf0e9b95ad62decb2a32d98e88f8"
-  integrity sha512-bIUojQcUIF2gB585ly/Om45N6qmN5AmaNRSQ2CmvxP1QR7jVl3NcA5kvFOawIVaif3HjZ8PRQboasn29i8LCMg==
+  version "0.8.0-dev.1684250524127"
+  resolved "http://localhost:4873/@lirx/stream/-/stream-0.8.0-dev.1684250524127.tgz#d34a782c987878b99dfbe52163e6b69cc17d498f"
+  integrity sha512-6TFArjHbBVFmDiibu0C268H6+x4p0H+4Ap6Qo82d946tmuFG46s11suld+xx6gk/fHteFz52JcrRbOaXhrnX5g==
   dependencies:
     "@lirx/async-task" latest
     "@lirx/utils" latest

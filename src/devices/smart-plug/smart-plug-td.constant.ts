@@ -1,5 +1,7 @@
 import { ON_OFF_STATE_THING_PROPERTY_TD } from '../shared/on-off-state/thing-config/on-off-state-thing-property.type';
-import { TOGGLE_ON_OFF_STATE_THING_ACTION_TD } from '../shared/on-off-state/thing-config/toggle-on-off-state-thing-action.type';
+import {
+  TOGGLE_ON_OFF_STATE_THING_ACTION_TD
+} from '../shared/on-off-state/thing-config/toggle-on-off-state-thing-action/toggle-on-off-state-thing-action-td.constant';
 import {
   POWER_CONSUMPTION_HISTORY_THING_PROPERTY_TD,
 } from '../shared/power-consumption-history/thing-config/power-consumption-history-thing-property.type';

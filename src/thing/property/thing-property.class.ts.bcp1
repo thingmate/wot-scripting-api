@@ -1,0 +1,144 @@
+import { Abortable, AsyncTask, IAsyncTaskConstraint, IAsyncTaskFactory, IAsyncTaskInput } from '@lirx/async-task';
+import { IPushSourceWithBackPressure, mergePushSourceWithBackPressure } from '@lirx/stream';
+import { IThingValue } from '../types/thing-value.type';
+import { observeThingPropertyUsingReadLoop } from './observe/observe-thing-property-using-read-loop';
+import { IThingPropertyObserveFunction, IThingPropertyObserveFunctionOptions } from './observe/thing-property-observe-function.type';
+import { IThingPropertyReadFunction } from './read/thing-property-read-function.type';
+import { IThingPropertyWriteFunction } from './write/thing-property-write-function.type';
+
+export interface IPushSinkWithBackPressure<GValue> {
+  (value: GValue, abortable: Abortable): AsyncTask<void>;
+}
+
+export interface IPushSinkAndSourceWithBackPressure<GValue> {
+  sink: IPushSinkWithBackPressure<GValue>;
+  source: IPushSourceWithBackPressure<GValue>;
+}
+
+export function createMultiCastPushSinkAndSourceWithBackPressure<GValue>(): IPushSinkAndSourceWithBackPressure<GValue> {
+  const sinks: IPushSinkWithBackPressure<GValue>[] = [];
+
+  const sink: IPushSinkWithBackPressure<GValue> = (
+    value: GValue,
+    abortable: Abortable,
+  ): AsyncTask<void> => {
+    return AsyncTask.all(
+      sinks.map((sink: IPushSinkWithBackPressure<GValue>): IAsyncTaskFactory<void> => {
+        return (abortable: Abortable): AsyncTask<void> => {
+          return sink(value, abortable);
+        };
+      }),
+      abortable,
+    )
+      .successful(() => {
+      });
+  };
+
+  const source: IPushSourceWithBackPressure<GValue> = (
+    sink: IPushSinkWithBackPressure<GValue>,
+    abortable: Abortable,
+  ): AsyncTask<void> => {
+    sinks.push((
+      value: GValue,
+      abortable: Abortable,
+    ): AsyncTask<void> => {
+      return sink(value, abortable);
+    });
+
+    abortable.onAbort((): void => {
+      sinks.splice(sinks.indexOf(sink), 1);
+      sink = (
+        value: GValue,
+        abortable: Abortable,
+      ): AsyncTask<void> => {
+        return AsyncTask.void(abortable);
+      };
+    });
+
+    return AsyncTask.never<void>(abortable);
+  };
+
+  return {
+    sink,
+    source,
+  };
+}
+
+export interface IThingPropertyInitOptions<GValue extends IAsyncTaskConstraint<GValue, IThingValue>> {
+  read: IThingPropertyReadFunction<GValue>;
+  write?: IThingPropertyWriteFunction<GValue>;
+  observe?: IThingPropertyObserveFunction<GValue>;
+}
+
+export class ThingProperty<GValue extends IAsyncTaskConstraint<GValue, IThingValue>> {
+  readonly #read: IThingPropertyReadFunction<GValue>;
+  readonly #write: IThingPropertyWriteFunction<GValue> | undefined;
+  readonly #observe: IThingPropertyObserveFunction<GValue> | undefined;
+
+  readonly #$value$: IPushSinkAndSourceWithBackPressure<GValue>;
+
+  constructor(
+    {
+      read,
+      write,
+      observe,
+    }: IThingPropertyInitOptions<GValue>,
+  ) {
+    this.#read = read;
+    this.#write = write;
+    this.#observe = observe;
+    this.#$value$ = createMultiCastPushSinkAndSourceWithBackPressure<GValue>();
+  }
+
+  get writable(): boolean {
+    return this.#write !== void 0;
+  }
+
+  get observable(): boolean {
+    return this.#observe !== void 0;
+  }
+
+  read(
+    abortable: Abortable = Abortable.never,
+  ): AsyncTask<GValue> {
+    return AsyncTask.fromFactory((abortable: Abortable): IAsyncTaskInput<GValue> => {
+      return this.#read(abortable);
+    }, abortable);
+  }
+
+  write(
+    value: GValue,
+    abortable: Abortable = Abortable.never,
+  ): AsyncTask<void> {
+    return AsyncTask.fromFactory((abortable: Abortable): IAsyncTaskInput<void> => {
+      if (this.writable) {
+        return this.#write!(value, abortable);
+      } else {
+        throw new Error(`The property is not writable.`);
+      }
+    }, abortable)
+      .successful(() => {
+
+      });
+  }
+
+  observe(
+    options?: IThingPropertyObserveFunctionOptions,
+  ): IPushSourceWithBackPressure<GValue> {
+    mergePushSourceWithBackPressure();
+    if (this.observable) {
+      return this.#observe!(options);
+    } else {
+      if (options?.useReadLoopFallback) {
+        return observeThingPropertyUsingReadLoop<GValue>({
+          ...options,
+          read: this.#read,
+        });
+      } else {
+        throw new Error(`The property is not observable.`);
+      }
+    }
+  }
+}
+
+export type IGenericThingProperty = ThingProperty<any>;

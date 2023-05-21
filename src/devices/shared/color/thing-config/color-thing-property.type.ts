@@ -1,7 +1,7 @@
 import { ThingProperty } from '../../../../thing/property/thing-property.class';
-import { IColor } from '../color.type';
+import { IColorMode } from '../color-mode.type';
 
-export type IColorThingProperty = ThingProperty<IColor>;
+export type IColorThingProperty = ThingProperty<IColorMode>;
 
 export interface IHavingColorThingProperty {
   color: IColorThingProperty;
@@ -11,16 +11,16 @@ export const COLOR_THING_PROPERTY_TD = {
   color: {
     type: 'object',
     properties: {
-      h: {
-        title: 'hue',
+      r: {
+        title: 'red',
         type: 'number',
       },
-      s: {
-        title: 'saturation',
+      g: {
+        title: 'green',
         type: 'number',
       },
-      l: {
-        title: 'brightness',
+      b: {
+        title: 'blue',
         type: 'number',
       },
     },

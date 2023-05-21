@@ -7,3 +7,4 @@ export function getOppositeOnOffState(
     ? 'off'
     : 'on';
 }
+
