@@ -1,0 +1,4 @@
+export * from './color-thing-property/index';
+export * from './on-off-state-thing-property/index';
+export * from './power-concumption-thing-property/index';
+export * from './power-consumption-history-thing-property/index';

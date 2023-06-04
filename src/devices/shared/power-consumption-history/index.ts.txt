@@ -1,2 +1,0 @@
-export * from './power-consumption-history.type';
-export * from './thing-config/index';

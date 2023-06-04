@@ -1,3 +1,0 @@
-export * from './shared/index';
-export * from './smart-light/index';
-export * from './smart-plug/index';

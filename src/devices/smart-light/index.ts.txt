@@ -1,3 +1,0 @@
-export * from './smart-light-config.type';
-export * from './smart-light-td.constant';
-export * from './smart-light-thing.type';

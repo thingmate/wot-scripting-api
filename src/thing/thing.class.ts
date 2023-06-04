@@ -70,3 +70,5 @@ export class Thing<GConfig extends IThingConfigConstraint<GConfig>> {
     }
   }
 }
+
+export type IGenericThing = Thing<any>;

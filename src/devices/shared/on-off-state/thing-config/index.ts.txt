@@ -1,2 +1,0 @@
-export * from './toggle-on-off-state-thing-action/index';
-export * from './on-off-state-thing-property.type';

@@ -1,2 +1,0 @@
-export * from './thing-config/index';
-export * from './color-mode.type';
