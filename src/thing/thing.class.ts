@@ -1,3 +1,5 @@
+import { DeepPartial } from '@lirx/utils';
+import { ThingDescription } from 'wot-thing-description-types';
 import {
   InferThingActionFromName,
   InferThingActionNames,
@@ -17,27 +19,44 @@ import {
   IThingConfigPropertiesConstraint,
 } from './property/config/thing-config-properties.type';
 
+export type IThingDescription = DeepPartial<ThingDescription>;
+
 export type IThingConfigConstraint<GThingConfig> =
   IThingConfigPropertiesConstraint<GThingConfig>
   & IThingConfigActionsConstraint<GThingConfig>
   & IThingConfigEventsConstraint<GThingConfig>
   ;
 
+export interface IThingInitDescriptionOptions {
+  description?: IThingDescription;
+}
+
+export type IThingInitOptions<GConfig extends IThingConfigConstraint<GConfig>> =
+  GConfig
+  & IThingInitDescriptionOptions;
+
 export class Thing<GConfig extends IThingConfigConstraint<GConfig>> {
+  readonly #description: IThingDescription;
   readonly #properties: InferThingProperties<GConfig>;
   readonly #actions: InferThingActions<GConfig>;
   readonly #events: InferThingEvents<GConfig>;
 
   constructor(
     {
+      description = {},
       properties = {},
       actions = {},
       events = {},
-    }: GConfig,
+    }: IThingInitOptions<GConfig>,
   ) {
+    this.#description = description;
     this.#properties = properties;
     this.#actions = actions;
     this.#events = events;
+  }
+
+  get description(): IThingDescription {
+    return this.#description;
   }
 
   getProperty<GName extends InferThingPropertyNames<GConfig>>(
