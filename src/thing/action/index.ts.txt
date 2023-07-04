@@ -1,3 +1,0 @@
-export * from './config/index';
-export * from './invoke/index';
-export * from './thing-action.class';

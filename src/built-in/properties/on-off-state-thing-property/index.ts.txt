@@ -1,4 +1,0 @@
-export * from './having-on-off-state-thing-property.type';
-export * from './on-off-state-thing-property-td.constant';
-export * from './on-off-state-thing-property.class';
-export * from './on-off-state-thing-property.type';

@@ -1,0 +1,2 @@
+export * from './having-properties-description.type';
+export * from './thing-properties-constraint.type';

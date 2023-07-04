@@ -1,4 +1,0 @@
-export * from './online-thing-property-td.constant';
-export * from './online-thing-property.class';
-export * from './online-thing-property.type';
-export * from './having-online-thing-property.type';

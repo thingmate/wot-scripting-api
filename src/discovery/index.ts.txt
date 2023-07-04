@@ -1,2 +1,2 @@
-export * from './discover/index';
-export * from './thing-discovery.class';
+export * from './thing-discovery.type';
+export * from './traits/index';

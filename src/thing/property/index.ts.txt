@@ -1,6 +1,0 @@
-export * from './config/index';
-export * from './observe/index';
-export * from './read/index';
-export * from './thing-property-init-options.type';
-export * from './thing-property.class';
-export * from './write/index';

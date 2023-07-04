@@ -15,10 +15,12 @@
     "reinstall": "rm -rf ./node_modules && rm -f ./yarn.lock && yarn install"
   },
   "dependencies": {
-    "@lifaon/color": "latest",
     "@lirx/async-task": "latest",
+    "@lirx/core": "latest",
     "@lirx/stream": "latest",
-    "@lirx/utils": "latest",
-    "wot-thing-description-types": "^1.1.0-24-May-2023"
+    "@lirx/utils": "latest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.2"
   }
 }

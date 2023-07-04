@@ -3,7 +3,7 @@
 ![NPM](https://img.shields.io/npm/l/@thingmate/wot-scripting-api.svg)
 ![npm type definitions](https://img.shields.io/npm/types/@thingmate/wot-scripting-api.svg)
 
-## thingmate/wot-scripting-api
+## @thingmate/wot-scripting-api
 
 
 ## 📦 Installation

@@ -1,4 +1,4 @@
-export * from './built-in/index';
+export * from './async-value/index';
 export * from './discovery/index';
-export * from './misc/index';
+export * from './thing-property/index';
 export * from './thing/index';
