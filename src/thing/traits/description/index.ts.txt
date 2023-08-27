@@ -1,2 +1,0 @@
-export * from './having-thing-description.type';
-export * from './thing-description.type';

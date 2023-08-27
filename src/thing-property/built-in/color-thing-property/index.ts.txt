@@ -1,5 +1,0 @@
-export * from './color-thing-property.type';
-export * from './functions/index';
-export * from './has-color-thing-property';
-export * from './having-color-thing-property.type';
-export * from './type/index';

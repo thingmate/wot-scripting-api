@@ -1,1 +1,0 @@
-export * from './create-async-value-observe-function-from-read-function';

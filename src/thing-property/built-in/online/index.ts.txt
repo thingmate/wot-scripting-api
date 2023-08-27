@@ -1,3 +1,0 @@
-export * from './has-online-thing-property';
-export * from './having-online-thing-property.type';
-export * from './online-thing-property.type';

@@ -1,5 +1,0 @@
-export * from './functions/index';
-export * from './has-on-off-thing-property';
-export * from './having-on-off-thing-property.type';
-export * from './on-off-thing-property.type';
-export * from './type/index';

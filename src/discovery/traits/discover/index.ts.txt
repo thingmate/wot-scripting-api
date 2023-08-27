@@ -1,2 +1,0 @@
-export * from './thing-discovery.discover.function-definition';
-export * from './thing-discovery.discover.trait';

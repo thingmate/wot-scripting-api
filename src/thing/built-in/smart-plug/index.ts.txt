@@ -1,3 +1,0 @@
-export * from './is-smart-plug-thing';
-export * from './smart-plug-properties.type';
-export * from './smart-plug-thing.type';

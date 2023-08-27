@@ -1,2 +1,0 @@
-export * from './thing-discovery.type';
-export * from './traits/index';

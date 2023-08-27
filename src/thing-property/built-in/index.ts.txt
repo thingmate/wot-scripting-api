@@ -1,5 +1,0 @@
-export * from './color-thing-property/index';
-export * from './online/index';
-export * from './onoff/index';
-export * from './power-consumption-history-thing-property/index';
-export * from './power-consumption-thing-property/index';
