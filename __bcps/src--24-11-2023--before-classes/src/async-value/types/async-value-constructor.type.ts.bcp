@@ -1,0 +1,8 @@
+import { IAsyncValue } from '../async-value.type';
+
+export interface IAsyncValueConstructor {
+  new<GValue>(
+    initialValue?: GValue | SignalThrow | undefined,
+    options?: ISignalOptions<GValue>,
+  ): IAsyncValue<GValue>;
+}

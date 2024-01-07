@@ -1,0 +1,11 @@
+import { IAsyncValue } from '../../async-value.type';
+import { IAsyncTaskConstraint } from '@lirx/async-task';
+
+export class AsyncValue<GValue extends IAsyncTaskConstraint<GValue>> implements IAsyncValue<GValue> {
+  constructor(
+
+  ) {
+  }
+}
+
+

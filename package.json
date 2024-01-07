@@ -21,6 +21,13 @@
     "@lirx/utils": "latest"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.2"
-  }
+    "@types/jest": "^29.5.7"
+  },
+  "localDependencies": [
+    "@lirx/async-task",
+    "@lirx/core",
+    "@lirx/stream",
+    "@lirx/utils"
+  ],
+  "packageManager": "yarn@4.0.1"
 }

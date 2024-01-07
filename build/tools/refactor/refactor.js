@@ -9,10 +9,10 @@ const ROOT_PATH = $path.join(__dirname, '../../../');
 // const NODE_MODULE_PATH = $path.join(ROOT_PATH, 'node_modules');
 // const VITE_CACHE_PATH = $path.join(NODE_MODULE_PATH, '.vite');
 
-const REFACTOR_DIRECTORY_PATH = $path.join(ROOT_PATH, 'src/core');
+const REFACTOR_DIRECTORY_PATH = $path.join(ROOT_PATH, 'src/async-value');
 
-const SIMPLE_REFACTOR_FROM = 'abc';
-const SIMPLE_REFACTOR_TO = 'def';
+const SIMPLE_REFACTOR_FROM = 'thing-property';
+const SIMPLE_REFACTOR_TO = 'async-value';
 
 
 function dashCaseToCamelCase(

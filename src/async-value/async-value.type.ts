@@ -11,3 +11,6 @@ export interface IAsyncValue<GValue extends IAsyncTaskConstraint<GValue>> extend
 {
 
 }
+
+export type IGenericAsyncValue = IAsyncValue<any>;
+
