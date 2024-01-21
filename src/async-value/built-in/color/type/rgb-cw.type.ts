@@ -5,7 +5,7 @@ export interface IRGB {
 }
 
 export interface ICW {
-  readonly c: number; // color [0, 1]
+  readonly c: number; // cold [0, 1]
   readonly w: number; // warm [0, 1]
 }
 

@@ -1,13 +1,27 @@
-import { IAsyncValueReadTrait } from '../../traits/read/async-value.read.trait';
-import { IAsyncTaskConstraint, Abortable, AsyncTask, asyncTimeout } from '@lirx/async-task';
+import { Abortable, AsyncTask, asyncTimeout, IAsyncTaskConstraint } from '@lirx/async-task';
+import { IPushSinkWithBackPressure, IPushSourceWithBackPressure } from '@lirx/stream';
 import { IAsyncValueOptionalObserveTrait } from '../../traits/observe/async-value.observe.trait';
-import { IPushSinkWithBackPressure } from '@lirx/stream';
-import { IAsyncValueObserveFunction } from '../../traits/observe/async-value.observe.function-definition';
+import { IAsyncValueReadTrait } from '../../traits/read/async-value.read.trait';
 
-export function getAsyncValueObserver<GValue extends IAsyncTaskConstraint<GValue>>(
-  asyncValue: IAsyncValueReadTrait<GValue> & IAsyncValueOptionalObserveTrait<GValue>,
-  period: number,
-): IAsyncValueObserveFunction<GValue> {
+export interface IAsyncValueToPushSourceWithBackPressure<GValue extends IAsyncTaskConstraint<GValue>> extends //
+  IAsyncValueReadTrait<GValue>,
+  IAsyncValueOptionalObserveTrait<GValue>
+//
+{
+}
+
+export interface IAsyncValueToPushSourceWithBackPressureOptions {
+  readonly period?: number;
+  readonly current?: boolean;
+}
+
+export function asyncValueToPushSourceWithBackPressure<GValue extends IAsyncTaskConstraint<GValue>>(
+  asyncValue: IAsyncValueToPushSourceWithBackPressure<GValue>,
+  {
+    period = 10 * 1000,
+    current = true,
+  }: IAsyncValueToPushSourceWithBackPressureOptions = {},
+): IPushSourceWithBackPressure<GValue> {
   if (asyncValue.observe === void 0) {
     return (
       sink: IPushSinkWithBackPressure<GValue>,
@@ -44,7 +58,25 @@ export function getAsyncValueObserver<GValue extends IAsyncTaskConstraint<GValue
       return loop(abortable);
     };
   } else {
-    return asyncValue.observe;
+    if (current) {
+      return (sink: IPushSinkWithBackPressure<GValue>, abortable: Abortable): AsyncTask<void> => {
+        return asyncValue.read(abortable)
+          .successful(sink)
+          .successful((_, abortable: Abortable): AsyncTask<void> => {
+            return asyncValue.observe!(sink, abortable);
+          });
+      };
+
+      // return mergePushSourceWithBackPressure([
+      //   (sink: IPushSinkWithBackPressure<GValue>, abortable: Abortable): AsyncTask<void> => {
+      //     return asyncValue.read(abortable)
+      //       .successful(sink);
+      //   },
+      //   asyncValue.observe,
+      // ]);
+    } else {
+      return asyncValue.observe;
+    }
   }
 }
 
